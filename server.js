@@ -2,16 +2,24 @@ var port = 1337,
     server,
     clientCallback = function (socket) {
         var headerSent = false,
-            timer, chunkId = 0;
+            timer,
+            chunkId = 0,
+            showChunks = false;
 
         socket.on('data', function (data) {
+            if (data.indexOf('show_chunks') != -1) {
+                showChunks = true;
+            }
+
             if (!headerSent) {
                 socket.write('HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\n\r\n');
                 headerSent = true;
             }
             else {
                 ++chunkId;
-                socket.write('::chunk_' + chunkId + '::');
+                if (showChunks) {
+                    socket.write('::chunk_' + chunkId + '::');
+                }
             }
 
             if (timer) {
