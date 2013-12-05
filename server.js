@@ -18,7 +18,7 @@ var port = 1337,
                 clearTimeout(timer);
             }
             socket.write(data);
-            timer = setTimeout(function(){socket.end();}, 50);
+            timer = setTimeout(function(){socket.end();}, 500);
         });
     };
 
