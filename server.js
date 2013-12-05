@@ -7,7 +7,7 @@ var port = 1337,
             showChunks = false;
 
         socket.on('data', function (data) {
-            if (data.indexOf('show_chunks') != -1) {
+            if ((''+data).indexOf('show_chunks') != -1) {
                 showChunks = true;
             }
 
