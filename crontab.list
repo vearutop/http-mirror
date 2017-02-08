@@ -1,1 +1,0 @@
-@reboot		cd ~/app/http-mirror; ~/app/http-mirror/run.sh >> ~/app/date-reboot.log

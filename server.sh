@@ -1,7 +1,7 @@
 #!/bin/bash
 while :
 do
-    /usr/local/bin/node ~/app/http-mirror/server.js
+    /usr/bin/nodejs ./server.js
 	sleep 1
 done
  

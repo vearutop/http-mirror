@@ -1,0 +1,1 @@
+@reboot		www-data	cd /var/www/http-mirror; /var/www/http-mirror/run.sh
